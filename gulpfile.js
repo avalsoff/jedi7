@@ -47,19 +47,16 @@ gulp.task('js', function() {
 });
 
 gulp.task('html', function() {
-  return gulp.src('src/pug/**/*.pug')
-  .pipe(pug({
-    pretty: true
-  }))
+  return gulp.src('src/*.html')
   .pipe(gulp.dest('build'))
   .pipe(browsersync.reload( {stream: true} ))
 });
 
-gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['html', 'styles', 'js', 'browser-sync'], function() {
   gulp.watch('src/'+syntax+'/**/*.'+syntax+'', ['styles']);
   gulp.watch(['libs/**/*.js', 'src/js/common.js'], ['js']);
   // gulp.watch('src/pug/**/*.pug', ['html']);
-  gulp.watch('src/*.html', browsersync.reload);
+  gulp.watch('src/*.html', ['html']);
 });
 
 gulp.task('default', ['watch']);

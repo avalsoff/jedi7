@@ -27,10 +27,10 @@ gulp.task('browser-sync', function() {
 
 gulp.task('styles', function() {
   return gulp.src('src/'+syntax+'/**/*.'+syntax+'')
-  .pipe(sass({ outputStyle: 'expand' }).on("error", notify.onError()))
+  .pipe(sass({ outputStyle: 'nested' }).on("error", notify.onError()))
   .pipe(rename({ suffix: '.min', prefix : '' }))
   .pipe(autoprefixer(['last 15 versions']))
-  .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+  // .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
   .pipe(gulp.dest('build/css'))
   .pipe(browsersync.reload( {stream: true} ))
 });
@@ -52,7 +52,13 @@ gulp.task('html', function() {
   .pipe(browsersync.reload( {stream: true} ))
 });
 
-gulp.task('watch', ['html', 'styles', 'js', 'browser-sync'], function() {
+gulp.task('fonts', function() {
+  return gulp.src('src/fonts/**/*')
+  .pipe(gulp.dest('build/fonts'))
+  .pipe(browsersync.reload( {stream: true} ))
+});
+
+gulp.task('watch', ['html', 'fonts', 'styles', 'js', 'browser-sync'], function() {
   gulp.watch('src/'+syntax+'/**/*.'+syntax+'', ['styles']);
   gulp.watch(['libs/**/*.js', 'src/js/common.js'], ['js']);
   // gulp.watch('src/pug/**/*.pug', ['html']);

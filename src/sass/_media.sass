@@ -23,18 +23,34 @@
 
 // ≥768px
 +media-breakpoint-down(sm)
-  .top-line
-    .phone
-      display: none
+  .container
+    width: 100%
+    max-width: 100%
   .flex-center
     margin: auto auto auto 10px
   .header-contacts 
+    padding-left: 10px
     .phone-h
       text-align: left
 
 // ≥576px
 +media-breakpoint-down(xs)
-  
+  .container
+    padding-right: 85px
+  .welcome
+    .h1
+      font-size: 28px
+      margin-top: 5px
+    p
+      span
+        font-size: 10px
+    strong
+      margin-top: 14px
+      font-size: 14px
+  .button
+    padding: 15px 35px
+
+
 
 /*==========  Mobile First  ==========*/
 

@@ -14,8 +14,13 @@ $(function() {
     }
   });
 
+  $(".carousel-services").on('initialized.owl.carousel', function() {
+    setTimeout(function () {      
+      carouselService();
+    }, 100);
+  });
   $(".carousel-services").owlCarousel({
-    loop: true,
+    // loop: true,
     nav: true,
     dots: false, //added by me
     smartSpeed: 700,
@@ -32,6 +37,19 @@ $(function() {
         items: 3
       }
     }
+  });
+
+  function carouselService() {
+    $('.carousel-services-item').each(function() {
+      var ths  = $(this),
+          thsh = ths.find('.carousel-services-content').outerHeight();
+          ths.find('.carousel-services-image').css('min-height', thsh);
+    });
+  }carouselService();
+
+  $('.carousel-services-composition .h3').each(function() {
+    var ths = $(this)
+    ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'))
   });
 
   // var api = $('#my-menu').data('mmenu');

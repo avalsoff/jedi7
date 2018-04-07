@@ -14,6 +14,26 @@ $(function() {
     }
   });
 
+  $(".carousel-services").owlCarousel({
+    loop: true,
+    nav: true,
+    dots: false, //added by me
+    smartSpeed: 700,
+    navText: ['<i class="fas fa-angle-double-left"></i>','<i class="fas fa-angle-double-right"></i>'],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      800: {
+        items: 2
+      },
+      1100: {
+        items: 3
+      }
+    }
+  });
+
   // var api = $('#my-menu').data('mmenu');
   // api.bind('open:start', function () {
   //   $('.hamburger').addClass('is-active');

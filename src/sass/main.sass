@@ -76,6 +76,8 @@ section
   &.inverse 
     color: #fff
     background-color: $dark
+    &.s-call
+      background-color: #fff
   .h2
     font-size: 30px 
     font-weight: 800
@@ -412,6 +414,17 @@ $colors: $blue, $red, $accent
     p
       margin: 30px 0
       font-size: 18px
+  &-call
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: 25%
+    &::before
+      content: ''
+      width: 50%
+      right: 0
+      height: 100%
+      position: absolute
+      background-color: rgba($accent, .92)
 
 .section-overlay
   &::before
@@ -435,7 +448,7 @@ $colors: $blue, $red, $accent
   &__thumb
     box-sizing: border-box
     border: 4px solid #fff
-    transition: .5s ease
+    transition: .5s
     &-border
       border-color: #3d3c3c
   &__nav:after, &_stage:after, &__nav:before, &_stage:before
@@ -459,5 +472,23 @@ $colors: $blue, $red, $accent
   &__active
     .fotorama__thumb
       border-color: #3d3c3c
+
+.success 
+  display: none
+
+.callback
+  padding: 25% 0
+  position: relative
+  &-logo
+    img
+      width: 100px
+      height: auto
+
+  .formhead
+    margin: 0
+    font-size: 30px
+    text-transform: uppercase
+    color: #fff
+
 
 @import "media" // Always at the end

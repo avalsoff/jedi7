@@ -21,7 +21,7 @@ $(function() {
   });
 
   $(".carousel-services").owlCarousel({
-    loop: true,
+    loop: false,
     nav: true,
     dots: false,
     smartSpeed: 700,
@@ -53,6 +53,11 @@ $(function() {
   $('.carousel-services-composition .h3').each(function() {
     var ths = $(this)
     ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'))
+  });
+
+  $('section .h2').each(function() {
+    var ths = $(this)
+    ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'))
   });
 
   function onResize() {

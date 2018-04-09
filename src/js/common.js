@@ -71,16 +71,32 @@ $(function() {
     autoHeight: true
   });
 
-  function onResize() {
+  $('.partners').owlCarousel({
+    loop: true,
+    smartSpeed: 700,
+    dots: false,
+    nav: true,
+    navText: ['<i class="fas fa-angle-left"></i>','<i class="fas fa-angle-right"></i>'],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2
+      },
+      992: {
+        items: 3
+      },
+      1200: {
+        items: 4
+      }
+    }
+  });
+
+  function onResize() {    
     $('.carousel-services-content').equalHeights();
   }onResize();
   window.onresize = function() {onResize()}
-
-  // var api = $('#my-menu').data('mmenu');
-  // api.bind('open:start', function () {
-  //   $('.hamburger').addClass('is-active');
-  // }).bind('close:finish', function () {
-  //   $('.hamburger').removeClass('is-active');
-  // });
 
 });

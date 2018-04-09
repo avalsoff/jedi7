@@ -62,6 +62,15 @@ $(function() {
 
   $('select').selectize();
 
+  $('.reviews').owlCarousel({
+    loop: true,
+    items: 1,
+    smartSpeed: 700,
+    nav: false,
+    dots: true,
+    autoHeight: true
+  });
+
   function onResize() {
     $('.carousel-services-content').equalHeights();
   }onResize();

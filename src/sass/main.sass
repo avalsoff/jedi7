@@ -575,5 +575,66 @@ select
   .button
     margin-top: 40px
 
+.reviews
+  text-align: center
 
+  .owl-dots
+    width: 100%
+    text-align: center
+    margin-top: 60px
+    .owl-dot
+      width: 8px
+      height: 8px
+      background-color: #fff
+      border-radius: 10em
+      display: inline-block
+      margin: 4px
+      transition: background-colo .5s ease, transform .5s ease
+      &.active
+        outline: 0
+        background-color: $accent
+        transform: scale(1.3)
+
+.review
+  mt20
+  &-header
+    font-family: 'Times New Roman', serif
+    font-style: italic
+    font-size: 30px
+    font-weight: bold
+  &-date
+    font-family: 'Times New Roman', serif
+    font-style: italic
+    font-size: 15px
+    color: #999
+  &-stars
+    margin: 18px 0 30px
+    font-size: 14px
+    color: $accent
+    .fa
+      margin: 0 2.5px
+  &-text
+    color: #95989a
+    font-weight: 400
+
+.quotes
+  position: absolute
+  width: 100%
+  &::before, &::after
+    content: ',,'
+    position: absolute
+    top: 161px
+    font-size: 56px
+    color: $accent
+    font-family: 'Times New Roman', serif
+    font-weight: bold
+    line-height: 0
+    transform: rotate(180deg)
+    display: block
+  &::before
+    top: 200px
+    left: -60px
+  &::after
+    right: -40px
+    transform: rotate(0)
 @import "media" // Always at the end

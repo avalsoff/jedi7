@@ -12,7 +12,6 @@ const autoprefixer  = require('gulp-autoprefixer');
 const notify        = require("gulp-notify");
 // const pug           = require('gulp-pug');
 
-
 gulp.task('browser-sync', function() {
   browsersync({
     server: {

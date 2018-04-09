@@ -12,9 +12,6 @@
   .header-contacts
     font-size: 14px
 
-  .carousel-services-item
-    flex-direction: column
-
   .s
     &-king, &-review, &-partners
       padding: 8% 0
@@ -24,6 +21,9 @@
     p
       margin: 15px 0
       font-size: 16px
+
+  .s-call
+    background-size: cover
 
 
 // ≥992px
@@ -35,6 +35,12 @@
   .header-contacts
     font-size: 14px
 
+  .carousel-services-item
+    flex-direction: column
+
+  .s-call
+    &::before
+      width: 100%
 
 
 
@@ -51,7 +57,7 @@
       text-align: left
   .fotorama__nav
     display: block
-
+  
 // ≥576px
 +media-breakpoint-down(xs)
   //header
